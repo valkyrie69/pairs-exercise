@@ -1,4 +1,4 @@
-# pairs-exercise
+# Paired Writing Exercise
 
 For this exercise, you will pair with a technical writer to edit the file configure-autodiscovery-4-task.adoc, which has some issues that should be fixed.
 
