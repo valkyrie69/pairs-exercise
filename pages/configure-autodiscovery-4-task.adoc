@@ -1,4 +1,4 @@
-= Configuring API Gateway API Autodiscovery in a Mule 4 Application
+= Configuring API Gateway API Autodiscovery in a Mule 4.x Application
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
@@ -7,13 +7,16 @@ To configure API Autodiscovery in your Mule 4.x application, you must meet the f
 
 == Making your API Available in API Manager
 
-The API to which you want to pair your Mule application must be available in API Manager. +
+The API to which you want to pair your Mule application must be available in API Manager. 
++
 You can either:
 
-* Publish your API in Exchange and import it from there to API Manager. +
-See xref:manage-exchange-api-task.adoc[To Manage an API from Exchange].
-* Import it directly from your machine. +
-See xref:import-api-task.adoc[To Import an API Instance] for more details.
+* Publish your API in Exchange and import it from there to API Manager. 
++
+For managing an API from Exchange see xref:manage-exchange-api-task.adoc.
+* Import it directly from your machine. 
++
+For more details on importing an API instance see xref:import-api-task.adoc.
 
 API Manager generates an "API ID" identifier for every imported API:
 
@@ -31,12 +34,14 @@ This step is necessary to instruct API Manager to use your deployed Mule applica
 
 == Configuring Anypoint Platform Organization Credentials in Mule Runtime
 
-To use Autodiscovery in a Mule Application, the Runtime must start with Anypoint Platform credentials already configured. +
+To use Autodiscovery in a Mule Application, the Runtime must start with Anypoint Platform credentials already configured. 
++
 Learn how to configure your organization credentials based on your deployment target in xref:org-credentials-config-mule4.adoc[Configuring Organization Credentials in Mule Runtime 4].
 
 == Configuring the Autodiscovery Element in Your Mule Application
 
-Within the code of your Mule Application, you must configure the `api-gateway:Autodiscovery` element. +
+Within the code of your Mule Application, you must configure the `api-gateway:Autodiscovery` element. 
++
 The Autodiscovery element points to the specific API in API Manager to which you want to pair.
 
 [TIP]
@@ -67,7 +72,7 @@ image::auto-discovery-api-config.png[align=center]
 +
 You can also choose to use the `${apiId}` value and reference it from a `config.properties` file.
 
-After the element is defined in the application, and the runtime is configured  with your Anypoint Platform credentials, Mule Runtime will automatically track and keep up to date with the API configuration. defined in API Manager.
+After the element is defined in the application, and the runtime is configured with your Anypoint Platform credentials, Mule Runtime will automatically track and keep up to date with the API configuration.
 //_COMBAK: Does this need to be deployed for the green dot to show in API Manager?
 
 == Changes from Mule 3.x Configuration
@@ -80,8 +85,8 @@ API Autodiscovery element has syntactically changed from Mule 3.x but its purpos
 ^| <api-platform-gw:api (...)/>. ^| <api-gateway:autodiscovery (...)/>.
 |===
 
-In Mule 4, the API is identified by the API Id and a reference to a Flow where the HTTP listener is defined. Mule 4’s apiId replaces the apiName and apiVersion used to specify the Autodiscovery element in Mule 3.x and prior.
+In Mule 4.x, the API is identified by the API Id and a reference to a Flow where the HTTP listener is defined. Mule 4.x’s apiId replaces the apiName and apiVersion used to specify the Autodiscovery element in Mule 3.x and prior.
 
-== See Also
+== See Also the document Reviewing API Gateway API Autodiscovery concepts
 
-* xref:api-auto-discovery-new-concept.adoc[Reviewing API Gateway API Autodiscovery concepts
+* xref:api-auto-discovery-new-concept.adoc
