@@ -8,7 +8,7 @@ Have fun!
 
 To do the exercise:
 
-1. Create your own branch.
-2. Edit the file using the tool of your preference.
-3. Commit your changes.
+1. Sign in to GitHub.
+2. Edit the pages/configure-autodiscovery-4-task.adoc file in GitHub.
+3. Propose your changes.
 4. Create a pull request.
