@@ -1,40 +1,43 @@
 = Anypoint Connector Tutorial
 
-After learning some of the basic functionality in the Basic Studio Tutorial and How to Create a Mule App Tutorial, it's time to try your hand at enriching your application with an *Anypoint Connector*.
-
-[NOTE]
-Anypoint Studio come with a set of connectors that can be easily added to your Studio flow to connect your application. You may find all certified connectors in xref:exchange::index.adoc[Anypoint Exchange].
+After learning some of the basic functionality in the Basic Studio Tutorial and How to Create a Mule App Tutorial, it's time to try your hand at enriching your application with an *Anypoint Connector*. To find all certified connectors, see xref:exchange::index.adoc[Anypoint Exchange]. //It would be good to link to the mentioned tutorials.
 
 == What is an Anypoint Connector?
 
-Anypoint Connectors are extensions that will allow for you to operate, as normal in external systems such as salesforce, Google Contacts, ServiceNow, Workday, Facebook, Twitter or MongoDB to integrate information from these systems to create something new. Connectors simplify the interaction with the SaaS providers' API's, providing methods for most of all of the available operations.
+Anypoint Connectors are extensions that will allow for you to connect external systems such as Salesforce, Google Contacts, ServiceNow, Workday, Facebook, Twitter, or MongoDB to integrate information from these systems into your project. Connectors simplify the interaction with the SaaS providers' API's. Connectors provide methods for most of all of the available operations.
 
 == How to Configure
 
-Typically, you will be performing these steps to configure a connector:
+You will perform these steps to configure a connector:
 
-. Store the authentication, connection or other settings in a *properties file* 
-. Reference the properties from the *connector configuration*. The connector configuration is automatically stored by Studio as a global element for use by any other connector instance using the same properties.
+. Store the authentication, connection, or other settings in a *properties file*. 
+. Reference the properties from the *connector configuration*. Anypoint Studio (Studio) automatically stores the connector configuration as a global element for use by any other connector instance using the same properties.
 . Test the connection from the configuration dialog.
 
 [TIP]
-Properties files can be used to provide a convenient mechanism for storing variables in a central location.
+You can use Properties files to provide a convenient mechanism for storing variables in a central location.
 
-Alot of the functionality of connectors is dependent upon it's target; that said, there are many features most connectors might have in common. After creating and running the applications in this tutorial, you should be able to apply what you've learn to connect applications to various SaaS applications.
+Alot of the functionality of connectors is dependent upon its target. There are many features most connectors might have in common. After creating and running the applications in this tutorial, you can apply what you've learned to connect applications to various SaaS applications.
 
 == Prerequisites
 
-This tutorial assumes that you have Anypoint Studio. If you do not have any previous experience with Eclipse or an Eclipse-based IDE, you can review the brief introduction to the Anypoint Studio interface and the document describing Global Elements in Mule. Further, you can consider following the xref:6@studio::basic-studio-tutorial.adoc[Basic] and xref:content-based-routing.adoc[Content-Based Routing] tutorials.
+You must have:
 
-NOTE: You have to obtain Twitter developer access to a Twitter app that you create in order to complete this tutorial. See <<Obtaining Access to the Twitter API>> for how to obtain Twitter developer access and create a simple app.
+* Anypoint Studio
+* Experience with Eclipse or an Eclipse-based IDE + 
+See the Anypoint Studio interface in the xref:6@studio::basic-studio-tutorial.adoc[Basic] tutorial, if you do not have any previous experience with Eclipse or an Eclipse-based IDE.
+* Experience with Global Elements in Mule +
+See the xref:content-based-routing.adoc[Content-Based Routing] tutorial, if you do not have any previous experience with Global Elements. 
+* Twitter developer access +
+See <<Obtaining Access to the Twitter API>> for how to obtain Twitter developer access and create a simple app.
 
-== Goals for This Tutorial
+== Steps
 
-In this tutorial, your goals are:
+In this tutorial, your will:
 
 . Walk through the process for obtaining Twitter API access and credentials.
-. Creating an application in Anypoint studio that uses a connector to access the Twitter API.
-. Learning how to use Global Elements and Foreach scope in the application.
+. Create an application in Anypoint studio that uses a connector to access the Twitter API.
+. Learn how to use Global Elements and Foreach scope in the application.
 . Run the application on a local runtime, which is embedded in Anypoint Studio.
 . Test the application using a browser.
 . Stop the app.
@@ -42,9 +45,8 @@ In this tutorial, your goals are:
 
 == Obtaining Access to the Twitter API
 
-In order to use the Twitter API you must first create a Twitter developer account for which to obtain a set of credentials.
+In order to use the Twitter API, you must have a Twitter developer account. If you don't already have one, create a https://twitter.com/signup[regular Twitter account]. You may wish to create an account specifically for testing in this exercise. To access your Twitter developer account, visit the https://dev.twitter.com/[Twitter dev.twitter.com Developer's page] and sign in using your Twitter account credentials. 
 
-. If you don't already have one, create a https://twitter.com/signup[regular Twitter account]. You may wish to create an account specifically for testing for posting various different things to Twitter in this exercise. Twitter prompts you to create a standard Twitter account. Supply you're full name, email address, a password, and user name. Go through the prompts to complete the process. Twitter will send you an email, which is a confirmation or a text message if you supplied a phone number. Visit the https://dev.twitter.com/[Twitter dev.twitter.com Developer's page] and sing in using your Twitter account credentials. 
 . This activity creates a separate developer account for you, with an association to your regular Twitter account.
 . To create a new *Twitter Application*, navigate to https://apps.twitter.com/[https://apps.twitter.com/].
 . Complete the *Application Details* form according to the table and image below.
