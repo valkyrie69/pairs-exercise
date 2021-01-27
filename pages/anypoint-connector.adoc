@@ -5,62 +5,60 @@ After learning some of the basic functionality in the Basic Studio Tutorial and 
 [NOTE]
 Anypoint Studio come with a set of connectors that can be easily added to your Studio flow to connect your application. You may find all certified connectors in xref:exchange::index.adoc[Anypoint Exchange].
 
-== What is an Anypoint Connector?
+== What is an Anypoint Connector
 
-Anypoint Connectors are extensions that will allow for you to operate, as normal in external systems such as salesforce, Google Contacts, ServiceNow, Workday, Facebook, Twitter or MongoDB to integrate information from these systems to create something new. Connectors simplify the interaction with the SaaS providers' API's, providing methods for most of all of the available operations.
+Anypoint Connectors are extensions that will allow for you to operate, as normal in external systems such as Salesforce, Google Contacts, ServiceNow, Workday, Facebook, Twitter or MongoDB to integrate information from these systems to create something new. Connectors simplify the interaction with the SaaS providers' API's, providing methods for most of all of the available operations.
 
-== How to Configure
+== How to Configure an Anypoint Connector
 
-Typically, you will be performing these steps to configure a connector:
+You will be performing the following steps to configure a connector.
 
-. Store the authentication, connection or other settings in a *properties file* 
-. Reference the properties from the *connector configuration*. The connector configuration is automatically stored by Studio as a global element for use by any other connector instance using the same properties.
+. Store the authentication, connection or other settings in a `properties` file
+. Reference the properties from the connector configuration. The connector configuration is automatically stored by Anypoint Studio as a global element for use by any other connector instance using the same properties.
 . Test the connection from the configuration dialog.
 
 [TIP]
-Properties files can be used to provide a convenient mechanism for storing variables in a central location.
+Property files can be used to provide a convenient mechanism for storing variables in a central location.
 
-Alot of the functionality of connectors is dependent upon it's target; that said, there are many features most connectors might have in common. After creating and running the applications in this tutorial, you should be able to apply what you've learn to connect applications to various SaaS applications.
+Alot of the functionality of connectors is dependent upon its target; that said, there are many features most connectors might have in common. After creating and running the applications in this tutorial, you should be able to apply what you've learned to connect applications to various SaaS applications.
 
-== Prerequisites
+== Tutorial Prerequisites
 
 This tutorial assumes that you have Anypoint Studio. If you do not have any previous experience with Eclipse or an Eclipse-based IDE, you can review the brief introduction to the Anypoint Studio interface and the document describing Global Elements in Mule. Further, you can consider following the xref:6@studio::basic-studio-tutorial.adoc[Basic] and xref:content-based-routing.adoc[Content-Based Routing] tutorials.
 
-NOTE: You have to obtain Twitter developer access to a Twitter app that you create in order to complete this tutorial. See <<Obtaining Access to the Twitter API>> for how to obtain Twitter developer access and create a simple app.
+NOTE: You will need Twitter developer access to complete this tutorial. See <<Obtaining Access to the Twitter API>> for how to obtain Twitter developer access and create a simple app.
 
-== Goals for This Tutorial
+== Tutorial Goals
 
 In this tutorial, your goals are:
 
-. Walk through the process for obtaining Twitter API access and credentials.
-. Creating an application in Anypoint studio that uses a connector to access the Twitter API.
-. Learning how to use Global Elements and Foreach scope in the application.
-. Run the application on a local runtime, which is embedded in Anypoint Studio.
+. Obtain Twitter API access and credentials.
+. Create an application in Anypoint Studio that uses a connector to access the Twitter API.
+. Learn how to use Global Elements and Foreach scope in the application.
+. Run the application on local runtime, which is embedded in Anypoint Studio.
 . Test the application using a browser.
-. Stop the app.
-. _(Optional)_ Apply your knowledge to an extra credit challenge.
 
-== Obtaining Access to the Twitter API
+== Obtain Access to the Twitter API
 
-In order to use the Twitter API you must first create a Twitter developer account for which to obtain a set of credentials.
+To use the Twitter API you must first create a Twitter developer account for which to obtain a set of credentials.
 
-. If you don't already have one, create a https://twitter.com/signup[regular Twitter account]. You may wish to create an account specifically for testing for posting various different things to Twitter in this exercise. Twitter prompts you to create a standard Twitter account. Supply you're full name, email address, a password, and user name. Go through the prompts to complete the process. Twitter will send you an email, which is a confirmation or a text message if you supplied a phone number. Visit the https://dev.twitter.com/[Twitter dev.twitter.com Developer's page] and sing in using your Twitter account credentials. 
-. This activity creates a separate developer account for you, with an association to your regular Twitter account.
-. To create a new *Twitter Application*, navigate to https://apps.twitter.com/[https://apps.twitter.com/].
+. If you don't already have one, create a https://twitter.com/signup[Twitter account]. You may wish to create an account specifically for testing, or posting different things to Twitter in this exercise. Supply you're full name, email address, a password, and username. Upon account creation Twitter will send you a confimration email, or a text message if you supplied a phone number. 
+. Navigate to https://dev.twitter.com/[Twitter dev.twitter.com Developer's page] and sign in using your new or existing account credentials. 
+. Navigate to https://apps.twitter.com/[https://apps.twitter.com/] to Create a new Twitter application.
 . Complete the *Application Details* form according to the table and image below.
 +
 [%header,cols="20a,80a"]
 |===
 |Field |Value
-|*Name* |A name for your application which must be unique to the Twitter system and which cannot contain the word "Twitter".
-|*Description* |A brief overview of the application your building.
-|*Website* |An entry is required here, however, because this Twitter application is not public, this field is not meaningful; enter a full URL placeholder value. You can simply use a name like `+http://www.example.com+`. Note that partial URLs like `example.com` are not accepted.
+|*Name* |A application name that is unique to the Twitter system of which cannot contain the word *Twitter*
+|*Description* |An overview of the application your building.
+|*Website* |A full URL placeholder value that is required, however, not meaningful because this Twitter application is not public. You can simply use a name like `+http://www.example.com+`. Note that partial URLs like `example.com` are not accepted.
 |*Callback URL* |Leave blank.
 |===
 +
 image::devacct1.png[]
 +
-. Agree to the terms and click on the *Create your Twitter application* if you agree.
+. Agree to the terms and click *Create your Twitter application*.
 +
 . Click on the *Keys and Access Tokens* tab and scroll down to click *Create my access token*.
 +
@@ -68,16 +66,16 @@ image::twitter-access-token.png[]
 +
 [NOTE]
 ====
-Using an access token, you can easily connect with the Twitter API using your application. However, your access to the API is restricted to your user account. For the purposes of this tutorial, an access token gives you the access which you need for your application to interact with the Twitter API.
+An access token will let you easily connect with the Twitter API using your application. However, access to the API is restricted to your user account. For the purposes of this tutorial, an access token only gives access which you need for your application to interact with the Twitter API.
 
-Later, if you want to expose such an application publicly, you need to configure your application to authenticate via OAuth.
+If you want to make your application public, you need to configure your application to authenticate via OAuth.
 ====
 +
-. Scroll down the page in the browser to display the values for *Access token* and *Access token secret* because you need to enter these values in Anypoint Studio record the following four keys from Twitter (refer to the image below):
-.. Consumer Key
-.. Consumer Secret
-.. Access Token
-.. Access Token Secret
+. Scroll down the page in the browser to display the values for *Access token* and *Access token secret*. You need to enter these values in Anypoint Studio and record the following four keys from Twitter (refer to the image below):
+1.  Consumer Key
+2.  Consumer Secret
+3.  Access Token
+4.  Access Token Secret
 +
 image::twitter-app-settings.png[]
 
