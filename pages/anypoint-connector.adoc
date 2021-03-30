@@ -3,7 +3,7 @@
 After learning some of the basic functionality in the Basic Studio Tutorial and How to Create a Mule App Tutorial, it's time to try your hand at enriching your application with an *Anypoint Connector*.
 
 [NOTE]
-Anypoint Studio come with a set of connectors that can be easily added to your Studio flow to connect your application. You may find all certified connectors in xref:exchange::index.adoc[Anypoint Exchange].
+Anypoint Studio comes with a set of connectors that can be easily added to your Studio flow to connect your application. You may find all certified connectors in xref:exchange::index.adoc[Anypoint Exchange].
 
 == What is an Anypoint Connector?
 
@@ -20,25 +20,25 @@ Typically, you will be performing these steps to configure a connector:
 [TIP]
 Properties files can be used to provide a convenient mechanism for storing variables in a central location.
 
-Alot of the functionality of connectors is dependent upon it's target; that said, there are many features most connectors might have in common. After creating and running the applications in this tutorial, you should be able to apply what you've learn to connect applications to various SaaS applications.
+Much of the functionality of connectors is dependent upon it's target. Most connectors have many features in common. After creating and running the applications in this tutorial, you should be able to apply what you've learned to connect applications to a variety SaaS applications.
 
 == Prerequisites
 
-This tutorial assumes that you have Anypoint Studio. If you do not have any previous experience with Eclipse or an Eclipse-based IDE, you can review the brief introduction to the Anypoint Studio interface and the document describing Global Elements in Mule. Further, you can consider following the xref:6@studio::basic-studio-tutorial.adoc[Basic] and xref:content-based-routing.adoc[Content-Based Routing] tutorials.
+This tutorial assumes that you use Anypoint Studio. For more information about Eclipse or an Eclipse-based IDE, see the brief introduction to the Anypoint Studio interface and the document describing Global Elements in Mule. You also can check the xref:6@studio::basic-studio-tutorial.adoc[Basic] and xref:content-based-routing.adoc[Content-Based Routing] tutorials.
 
-NOTE: You have to obtain Twitter developer access to a Twitter app that you create in order to complete this tutorial. See <<Obtaining Access to the Twitter API>> for how to obtain Twitter developer access and create a simple app.
+NOTE: In order to complete this tutorial, you must obtain Twitter developer access to a Twitter app that you create. See <<Obtaining Access to the Twitter API>> for how to obtain Twitter developer access and create a simple app.
 
 == Goals for This Tutorial
 
-In this tutorial, your goals are:
+In this tutorial, you will learn the following:
 
-. Walk through the process for obtaining Twitter API access and credentials.
+. Walking through the process for obtaining Twitter API access and credentials.
 . Creating an application in Anypoint studio that uses a connector to access the Twitter API.
 . Learning how to use Global Elements and Foreach scope in the application.
-. Run the application on a local runtime, which is embedded in Anypoint Studio.
-. Test the application using a browser.
-. Stop the app.
-. _(Optional)_ Apply your knowledge to an extra credit challenge.
+. Running the application on a local runtime, which is embedded in Anypoint Studio.
+. Testing the application using a browser.
+. Stopping the app.
+. _(Optional)_ Applying your knowledge to an extra credit challenge.
 
 == Obtaining Access to the Twitter API
 
