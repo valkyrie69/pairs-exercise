@@ -1,34 +1,34 @@
 = Anypoint Connector Tutorial
 
-After learning some of the basic functionality in the Basic Studio Tutorial and How to Create a Mule App Tutorial, it's time to try your hand at enriching your application with an *Anypoint Connector*.
+After learning some of the basic functionality in the Basic Studio Tutorial and in the How to Create a Mule App Tutorial, it is time to enriching your application with an *Anypoint Connector*.
 
 [NOTE]
-Anypoint Studio come with a set of connectors that can be easily added to your Studio flow to connect your application. You may find all certified connectors in xref:exchange::index.adoc[Anypoint Exchange].
+Anypoint Studio comes with a set of connectors that can be easily added to your Studio flow. You may find all certified connectors in xref:exchange::index.adoc[Anypoint Exchange].
 
 == What is an Anypoint Connector?
 
-Anypoint Connectors are extensions that will allow for you to operate, as normal in external systems such as salesforce, Google Contacts, ServiceNow, Workday, Facebook, Twitter or MongoDB to integrate information from these systems to create something new. Connectors simplify the interaction with the SaaS providers' API's, providing methods for most of all of the available operations.
+Anypoint Connectors are extensions that will allow you to operate in external systems such as Salesforce, Google Contacts, ServiceNow, Workday, Facebook, Twitter, or MongoDB to integrate information from these systems to create something new. Connectors simplify the interaction with the SaaS providers' APIs, providing methods for most of all the available operations.
 
 == How to Configure
 
 Typically, you will be performing these steps to configure a connector:
 
-. Store the authentication, connection or other settings in a *properties file* 
-. Reference the properties from the *connector configuration*. The connector configuration is automatically stored by Studio as a global element for use by any other connector instance using the same properties.
+. Store the authentication, connection, or other settings in a *Properties file*. 
+. Reference the properties from the *connector configuration*. The connector configuration is automatically stored by Studio as a global element that can be used by any other connector instance using the same properties.
 . Test the connection from the configuration dialog.
 
 [TIP]
 Properties files can be used to provide a convenient mechanism for storing variables in a central location.
 
-Alot of the functionality of connectors is dependent upon it's target; that said, there are many features most connectors might have in common. After creating and running the applications in this tutorial, you should be able to apply what you've learn to connect applications to various SaaS applications.
+The main functionality of connectors dependents on its target, so there are many features most connectors may have in common. After creating and running the applications in this tutorial, you should be able to apply what you have learned to connect applications to various SaaS applications.
 
 == Prerequisites
 
-This tutorial assumes that you have Anypoint Studio. If you do not have any previous experience with Eclipse or an Eclipse-based IDE, you can review the brief introduction to the Anypoint Studio interface and the document describing Global Elements in Mule. Further, you can consider following the xref:6@studio::basic-studio-tutorial.adoc[Basic] and xref:content-based-routing.adoc[Content-Based Routing] tutorials.
+This tutorial assumes that you have Anypoint Studio. If you do not have any previous experience with Eclipse or an Eclipse-based IDE, you can review the brief introduction to the Anypoint Studio interface, and the document describing Global Elements in Mule. Furthermore, you can consider following the xref:6@studio::basic-studio-tutorial.adoc[Basic] and xref:content-based-routing.adoc[Content-Based Routing] tutorials.
 
-NOTE: You have to obtain Twitter developer access to a Twitter app that you create in order to complete this tutorial. See <<Obtaining Access to the Twitter API>> for how to obtain Twitter developer access and create a simple app.
+NOTE: You have to obtain Twitter developer access to a Twitter app that you create in order to complete this tutorial. See <<Obtaining Access to the Twitter API>> to learn how to get a Twitter developer access and create a simple app.
 
-== Goals for This Tutorial
+== Goals for this Tutorial
 
 In this tutorial, your goals are:
 
